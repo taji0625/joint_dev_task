@@ -150,6 +150,19 @@ end
 
 class UserQ17
   # 以下に回答を記載
+  def initialize(name:, age:, gender:)
+    @name = name
+    @age = age
+    @gender = gender
+  end
+
+  def info
+    puts <<~TEXT
+    名前:#{@name}
+    年齢:#{@age}
+    性別:#{@gender}
+    TEXT
+  end
 
 end
 
@@ -165,6 +178,14 @@ end
 
 class UserQ18
   # 以下に回答を記載
+  def initialize(name:, age:)
+    @name = name
+    @age = age
+  end
+
+  def introduce
+    print @age == 32 ? "こんにちは，#{@name}と申します。宜しくお願いいたします。" : "はいさいまいど〜，#{@name}です！！！"
+  end
 
 end
 
@@ -180,8 +201,11 @@ end
 class Item
   # 以下を修正して下さい
 
-  def initialize(name)
+  def initialize(name:)
     @name = name
+  end
+  def name
+    @name
   end
 end
 
@@ -193,11 +217,26 @@ end
 
 class UserQ20
   # 以下に回答を記載
-
+  # def initialize(name:, age:)
+  #   @name = name
+  #   @age = age
+  # end
 end
 
 class Zoo
   # 以下に回答を記載
+
+  # def info_entry_fee(infant:, children:, adult:, senior:)
+  #   if @age <= 5
+  #     puts "#{@user_name}さんの入場料金は#{infant}です。"
+  #   elsif @age <= 12
+  #     puts "#{@user_name}さんの入場料金は#{children}です。"
+  #   elsif @age <= 64
+  #     puts "#{@user_name}さんの入場料金は#{adult}です。"
+  #   else @age <= 120
+  #     puts "#{@user_name}さんの入場料金は#{senior}です。"
+  #   end
+  end
 
 end
 
