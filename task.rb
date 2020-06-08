@@ -150,10 +150,10 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  def initialize(name:, age:, gender:)
-    @name = name
-    @age = age
-    @gender = gender
+  def initialize**params
+    @name = params[:name]
+    @age = params[:age]
+    @gender = params[:gender]
   end
 
   def info
@@ -200,12 +200,9 @@ end
 
 class Item
   # 以下を修正して下さい
-
+  attr_reader :name
   def initialize(name:)
     @name = name
-  end
-  def name
-    @name
   end
 end
 
@@ -217,27 +214,37 @@ end
 
 class UserQ20
   # 以下に回答を記載
-  # def initialize(name:, age:)
-  #   @name = name
-  #   @age = age
-  # end
+  def initialize(name:, age:)
+    @name = name
+    @age = age
+  end
 end
 
 class Zoo
   # 以下に回答を記載
-
-  # def info_entry_fee(infant:, children:, adult:, senior:)
-  #   if @age <= 5
-  #     puts "#{@user_name}さんの入場料金は#{infant}です。"
-  #   elsif @age <= 12
-  #     puts "#{@user_name}さんの入場料金は#{children}です。"
-  #   elsif @age <= 64
-  #     puts "#{@user_name}さんの入場料金は#{adult}です。"
-  #   else @age <= 120
-  #     puts "#{@user_name}さんの入場料金は#{senior}です。"
-  #   end
+  def initialize(name:, entry_fee:)
+    @name = name
+    @entry_fee = entry_fee
   end
-
+  def info_entry_fee(user)
+    @infant = entry_fee[:infant]
+    @children = entry_fee[:children]
+    @adult = entry_fee[:adult]
+    @senior = entry_fee[:senilr]
+    
+    case user.age
+    when 0..5
+      price = @infant
+    when 6..12
+      price = @children
+    when 13..64
+      price = @adult
+    when 65..120
+      price = @senior
+    end
+    
+    puts "#{user.name}さんの入場料金は#{price}円です。"
+  end
 end
 
 
