@@ -150,7 +150,7 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  def initialize**params
+  def initialize(**params)
     @name = params[:name]
     @age = params[:age]
     @gender = params[:gender]
@@ -178,7 +178,7 @@ end
 
 class UserQ18
   # 以下に回答を記載
-  def initialize**params
+  def initialize(**params)
     @name = params[:name]
     @age = params[:age]
   end
@@ -223,7 +223,7 @@ end
 
 class Zoo
   # 以下に回答を記載
-  def initialize**params
+  def initialize(**params)
     @name = params[:name]
     @entry_fee = params[:entry_fee]
     @infant_fee = params[:entry_fee] [:infant]
